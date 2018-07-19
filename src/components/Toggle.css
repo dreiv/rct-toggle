@@ -27,7 +27,6 @@
 }
 
 :checked + .toggle__container {
-	border-color: var(--blue);
 	background-color: #6edc5f;
 }
 
