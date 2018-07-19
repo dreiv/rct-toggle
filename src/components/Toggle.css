@@ -14,7 +14,8 @@
 
 	transition: background-color .15s ease;
 
-	border: .0625rem solid var(--white);
+	border: .125rem solid;
+	border-color: var(--white);
 	border-radius: 1.5rem;
 	background-color: var(--white);
 
@@ -27,14 +28,14 @@
 
 :checked + .toggle__container {
 	border-color: var(--blue);
-	background-color: var(--blue);
+	background-color: #6edc5f;
 }
 
 .toggle__knob {
 	width: 1.75rem;
 	height: 1.75rem;
 
-	transition: transform 150ms ease;
+	transition: transform .15s ease;
 
 	border-radius: 50%;
 	background-color: #fff;
