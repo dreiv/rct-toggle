@@ -1,0 +1,46 @@
+.toggle {
+	display: inline-flex;
+}
+
+.toggle__input {
+	position: absolute;
+
+	opacity: 0;
+}
+
+.toggle__container {
+	width: 3.5rem;
+	height: 1.75rem;
+
+	transition: background-color .15s ease;
+
+	border: .0625rem solid var(--white);
+	border-radius: 1.5rem;
+	background-color: var(--white);
+
+	will-change: background-color;
+}
+
+:focus + .toggle__container {
+	border-color: var(--blue);
+}
+
+:checked + .toggle__container {
+	border-color: var(--blue);
+	background-color: var(--blue);
+}
+
+.toggle__knob {
+	width: 1.75rem;
+	height: 1.75rem;
+
+	transition: transform 150ms ease;
+
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 .0625rem .1875rem 0 rgba(0, 0, 0, .3);
+}
+
+:checked + .toggle__container > .toggle__knob {
+	transform: translateX(1.75rem);
+}
