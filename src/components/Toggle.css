@@ -9,38 +9,44 @@
 }
 
 .toggle__container {
-	width: 3.5rem;
-	height: 1.75rem;
+	width: 2em;
+	height: 1em;
+	padding: .0625rem;
 
+	cursor: pointer;
+	user-select: none;
 	transition: background-color .15s ease;
 
-	border: .125rem solid;
-	border-color: var(--white);
-	border-radius: 1.5rem;
-	background-color: var(--white);
+	border-radius: 1em;
+	background-color: #d5d9de;
 
 	will-change: background-color;
 }
 
 :focus + .toggle__container {
-	border-color: var(--blue);
+	box-shadow: 0 0 .25em .06em #36b4c7;
 }
 
 :checked + .toggle__container {
 	background-color: #6edc5f;
 }
 
-.toggle__knob {
-	width: 1.75rem;
-	height: 1.75rem;
+.toggle__container::after {
+	position: relative;
+	left: 0;
 
-	transition: transform .15s ease;
+	display: block;
+
+	width: 50%;
+	height: 100%;
+
+	content: '';
+	transition: all .15s ease;
 
 	border-radius: 50%;
 	background-color: #fff;
-	box-shadow: 0 .0625rem .1875rem 0 rgba(0, 0, 0, .3);
 }
 
-:checked + .toggle__container > .toggle__knob {
-	transform: translateX(1.75rem);
+:checked + .toggle__container::after {
+	left: 50%;
 }
