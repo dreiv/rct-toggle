@@ -8,6 +8,7 @@ class App extends Component {
 
 		this.state = {
 			checked: false,
+			size: 1,
 		}
 	}
 
@@ -17,8 +18,12 @@ class App extends Component {
 		}))
 	}
 
+	handleResize = ({ target: { value } }) => {
+		this.setState({ size: +value })
+	}
+
 	render() {
-		const { checked } = this.state
+		const { checked, size } = this.state
 
 		return (
 			<div className="App">
@@ -27,12 +32,17 @@ class App extends Component {
 					value={checked}
 					defaultChecked={checked}
 					onChange={this.toggle}
+					style={{ fontSize: `${size}em` }}
 				/>
+				<span role="img" aria-label="cat">
+					🐈
+				</span>
 				<h1>
-					<span role="img" aria-label="cat">
-						🐈
-					</span>
-					The toggle is checked: {`${checked}`}
+					<p>Toggle checked: {`${checked}`}</p>
+					<p>
+						Toggle size:
+						<input type="number" value={size} onChange={this.handleResize} />
+					</p>
 				</h1>
 			</div>
 		)
